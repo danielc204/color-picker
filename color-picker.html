@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body style="text-align:center; margin-top:40px; font-family:sans-serif;">
+    <label for="colorInput">בחר צבע:</label><br><br>
+    <input type="color" id="colorInput" name="colorInput">
+    <p id="colorValue">#000000</p>
+
+    <script>
+      const input = document.getElementById("colorInput");
+      const display = document.getElementById("colorValue");
+
+      input.addEventListener("input", function () {
+        display.textContent = input.value;
+        // Send the value back to Thunkable
+        window.ReactNativeWebView.postMessage(input.value);
+      });
+    </script>
+  </body>
+</html>
