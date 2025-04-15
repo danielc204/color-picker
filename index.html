@@ -5,60 +5,69 @@
   <title>Color Picker</title>
   <style>
     html, body {
-      height: 100%;
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
       background-color: #fdfcf8;
       direction: rtl;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
     }
 
     .popup-container {
       display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      gap: 25px;
+    }
+
+    .color-group {
+      display: flex;
       flex-direction: column;
-      padding: 20px;
-      gap: 40px;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
     }
 
-    .color-section {
-      background-color: #f1f0eb;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .section-title {
-      font-size: 18px;
+    .group-title {
+      font-size: 14px;
       font-weight: bold;
-      margin-bottom: 15px;
+      margin-bottom: 5px;
     }
 
     .color-grid {
       display: flex;
+      flex-direction: column;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 8px;
+      align-items: center;
     }
 
     .color-circle {
-      width: 50px;
-      height: 50px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       cursor: pointer;
-      border: 3px solid transparent;
+      border: 2px solid transparent;
       transition: transform 0.2s, border 0.2s;
     }
 
     .color-circle:hover {
       transform: scale(1.1);
-      border: 3px solid #999;
+      border: 2px solid #999;
     }
   </style>
 </head>
 <body>
-<div class="popup-container">
 
-  <div class="color-section">
-    <div class="section-title">צבעים בסיסיים</div>
+<div class="popup-container">
+  <div class="color-group">
+    <div class="group-title">בסיסי</div>
     <div class="color-grid">
       <div class="color-circle" style="background-color: red;" onclick="selectColor('red')"></div>
       <div class="color-circle" style="background-color: blue;" onclick="selectColor('blue')"></div>
@@ -73,8 +82,8 @@
     </div>
   </div>
 
-  <div class="color-section">
-    <div class="section-title">צבעים עדינים</div>
+  <div class="color-group">
+    <div class="group-title">עדין</div>
     <div class="color-grid">
       <div class="color-circle" style="background-color: #F8EDEB;" onclick="selectColor('#F8EDEB')"></div>
       <div class="color-circle" style="background-color: #E2ECE9;" onclick="selectColor('#E2ECE9')"></div>
@@ -89,8 +98,8 @@
     </div>
   </div>
 
-  <div class="color-section">
-    <div class="section-title">צבעים פופולריים</div>
+  <div class="color-group">
+    <div class="group-title">פופולרי</div>
     <div class="color-grid">
       <div class="color-circle" style="background-color: #7F5AF0;" onclick="selectColor('#7F5AF0')"></div>
       <div class="color-circle" style="background-color: #F25F4C;" onclick="selectColor('#F25F4C')"></div>
@@ -105,8 +114,8 @@
     </div>
   </div>
 
-  <div class="color-section">
-    <div class="section-title">המלצת קווים ומחשבות</div>
+  <div class="color-group">
+    <div class="group-title">המלצת קווים ומחשבות</div>
     <div class="color-grid">
       <div class="color-circle" style="background-color: #25408f;" onclick="selectColor('#25408f')"></div>
       <div class="color-circle" style="background-color: #23b0e6;" onclick="selectColor('#23b0e6')"></div>
@@ -115,13 +124,12 @@
       <div class="color-circle" style="background-color: #f26722;" onclick="selectColor('#f26722')"></div>
     </div>
   </div>
-
 </div>
 
 <script>
   function selectColor(color) {
     alert("בחרת את הצבע: " + color);
-    // כאן תוכל לשלב את הצבע שנבחר בטאנקאבל דרך Web API או משתנה גלובלי
+    // כאן אפשר להכניס שילוב עם טאנקאבל או כל לוגיקה נוספת
   }
 </script>
 
