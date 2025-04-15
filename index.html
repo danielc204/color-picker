@@ -23,29 +23,26 @@
       height: 100%;
       padding: 10px;
       box-sizing: border-box;
-      gap: 25px;
+      gap: 20px;
     }
 
     .color-group {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
-      flex: 1;
+      gap: 8px;
     }
 
     .group-title {
       font-size: 14px;
       font-weight: bold;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
 
     .color-grid {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 8px;
-      align-items: center;
     }
 
     .color-circle {
@@ -78,7 +75,6 @@
       <div class="color-circle" style="background-color: pink;" onclick="selectColor('pink')"></div>
       <div class="color-circle" style="background-color: brown;" onclick="selectColor('brown')"></div>
       <div class="color-circle" style="background-color: black;" onclick="selectColor('black')"></div>
-      <div class="color-circle" style="background-color: white;" onclick="selectColor('white')"></div>
     </div>
   </div>
 
@@ -94,7 +90,6 @@
       <div class="color-circle" style="background-color: #E4D6A7;" onclick="selectColor('#E4D6A7')"></div>
       <div class="color-circle" style="background-color: #C8C6A7;" onclick="selectColor('#C8C6A7')"></div>
       <div class="color-circle" style="background-color: #EADBC8;" onclick="selectColor('#EADBC8')"></div>
-      <div class="color-circle" style="background-color: #F2EAD3;" onclick="selectColor('#F2EAD3')"></div>
     </div>
   </div>
 
@@ -110,13 +105,12 @@
       <div class="color-circle" style="background-color: #FF90E8;" onclick="selectColor('#FF90E8')"></div>
       <div class="color-circle" style="background-color: #FF7A00;" onclick="selectColor('#FF7A00')"></div>
       <div class="color-circle" style="background-color: #B8B8FF;" onclick="selectColor('#B8B8FF')"></div>
-      <div class="color-circle" style="background-color: #F9BC60;" onclick="selectColor('#F9BC60')"></div>
     </div>
   </div>
 
   <div class="color-group">
     <div class="group-title">המלצת קווים ומחשבות</div>
-    <div class="color-grid">
+    <div class="color-grid" style="grid-template-columns: repeat(3, 1fr);">
       <div class="color-circle" style="background-color: #25408f;" onclick="selectColor('#25408f')"></div>
       <div class="color-circle" style="background-color: #23b0e6;" onclick="selectColor('#23b0e6')"></div>
       <div class="color-circle" style="background-color: #92cd8d;" onclick="selectColor('#92cd8d')"></div>
@@ -129,7 +123,7 @@
 <script>
   function selectColor(color) {
     alert("בחרת את הצבע: " + color);
-    // כאן אפשר להכניס שילוב עם טאנקאבל או כל לוגיקה נוספת
+    // אפשר להוסיף כאן אינטגרציה עם טאנקאבל או קריאה לפונקציה חיצונית
   }
 </script>
 
