@@ -133,9 +133,11 @@
 </div>
 
 <script>
-  function selectColor(color) {
-    alert("בחרת את הצבע: " + color);
-    // כאן אפשר להוסיף קריאה לפונקציה בטאנקאבל
+  
+   function selectColor(color) {
+  window.ReactNativeWebView.postMessage(color);
+}
+
   }
 </script>
 
