@@ -134,11 +134,10 @@
 
 <script>
   
-function selectColor(color) {
-  console.log('Sending color:', color);
-  window.ReactNativeWebView.postMessage(JSON.stringify({ type: "colorSelected", color: color }));
-}
-
+<script>
+  function selectColor(color) {
+    window.ReactNativeWebView.postMessage(color);
+  }
   }
   
 </script>
