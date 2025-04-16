@@ -15,17 +15,15 @@
       width: 100vw;
     }
 
-    .popup-container {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      height: 100%;
+  .popup-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);  /* שני טורים */
+      gap: 12px;
       padding: 8px;
       box-sizing: border-box;
-      gap: 12px;
       overflow-y: auto;
+      height: 100%;
+      align-items: flex-start;
     }
 
     .color-group {
